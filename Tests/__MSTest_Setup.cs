@@ -15,7 +15,13 @@ public class __MSTest_Setup
 
         nac.OCR.Tesseract.repositories.Logger.OnNewMessage += (_s, _args) =>
         {
-            
+            nac.Logging.Logger.CreateLogEntry(new LogEntryCreationInfo
+            {
+                CallingMemberName = _args.CallingMemberName,
+                Source = new LoggerSourceInfo(_args.CallerType),
+                Level = Ecark.Logging.Logger.getLogLevelFromText(_args.Level),
+                MessageText = _args.Message
+            });
         };
         
         log.Info("Tests Starting");
