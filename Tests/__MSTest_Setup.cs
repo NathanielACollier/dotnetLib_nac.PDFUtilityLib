@@ -12,15 +12,16 @@ public class __MSTest_Setup
     public static async Task MyTestInitialize(TestContext testContext)
     {
         nac.Logging.Appenders.Debug.Setup();
+        nac.Logging.Appenders.RollingFile.Setup();
 
         nac.OCR.Tesseract.repositories.Logger.OnNewMessage += (_s, _args) =>
         {
-            nac.Logging.Logger.CreateLogEntry(new LogEntryCreationInfo
+            nac.Logging.Logger.CreateLogEntry(new nac.Logging.model.LogMessage
             {
                 CallingMemberName = _args.CallingMemberName,
-                Source = new LoggerSourceInfo(_args.CallerType),
-                Level = Ecark.Logging.Logger.getLogLevelFromText(_args.Level),
-                MessageText = _args.Message
+                CallingClassType = _args.CallerType,
+                Level = nac.Logging.Logger.getLogLevelFromText(_args.Level),
+                Message = _args.Message
             });
         };
         
