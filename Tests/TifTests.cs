@@ -3,10 +3,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests;
 
 [TestClass]
-public class UnitTest1
+public class TifTests
 {
     [TestMethod]
-    public void TestMethod1()
+    public void ConvertPDFToMultipageTif()
     {
+        string pdfPath = "~/"
     }
 }
