@@ -5,7 +5,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="repositories\" />
+        <PackageReference Include="SixLabors.ImageSharp" Version="3.1.5" />
+        <PackageReference Include="Docnet.Core" Version="2.6.0" />
     </ItemGroup>
-
+    
+    
 </Project>
