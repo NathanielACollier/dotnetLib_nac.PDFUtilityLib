@@ -22,6 +22,22 @@ public class TifTests
         
         Assert.IsTrue(outFileInfo.Length > pdfFileInfo.Length, $"Tif file {outFileInfo.Length} bytes was smaller than original PDF bytes {pdfFileInfo.Length}");
     }
+
+
+    [TestMethod]
+    public void ConvertMultipageTifToPdf()
+    {
+        string inputTifPath = lib.directoryHelper.RelativeToHome("temp/Macworld_01_Premier_Issue.tif");
+        string outputPDFPath = lib.directoryHelper.RelativeToHome("temp/MacWorld_01_Premier_Issue_Pictures.pdf");
+        
+        nac.OCR.Tesseract.repositories.pdfToTifRepo.ConvertMultipageTifToPDF(inputTifPath, outputPDFPath);
+        
+        var inputTifFileInfo = new System.IO.FileInfo(inputTifPath);
+        var outputPDFFileInfo = new System.IO.FileInfo(outputPDFPath);
+        
+        Assert.IsTrue(outputPDFFileInfo != null &&
+                      outputPDFFileInfo.Exists == true, $"PDF file didn't exist at path {outputPDFFileInfo.FullName}");
+    }
     
     
     

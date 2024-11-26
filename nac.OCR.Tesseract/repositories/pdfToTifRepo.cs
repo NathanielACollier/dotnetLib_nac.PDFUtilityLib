@@ -28,6 +28,30 @@ public static class pdfToTifRepo
             tifWriter.SaveToFile(outputFilePath);
         }
     }
+
+
+
+    public static void ConvertMultipageTifToPDF(string tifFilePath,
+        string pdfOutputFilePath)
+    {
+        log.Debug($"Start converting Multipage Tif to PDF\nMultipage Tif input: {tifFilePath}\nPDF Output: {pdfOutputFilePath}");
+        
+        using( var tifReader = new repositories.MultiPageTIFFReader(tifFilePath))
+        using (var pdfWriter = new repositories.MultiPageTIFFWriter())
+        {
+            log.Debug($"Tif read in with {tifReader.PageCount} pages");
+            for (int page = 0; page < tifReader.PageCount; ++page)
+            {
+                log.Debug($"Processing page {page}");
+                byte[] pageImage = tifReader.GetPageBitMap(page);
+                log.Debug($"Page {page} image is {pageImage.Length} bytes");
+                pdfWriter.AddPage(pageImage);
+            }
+            
+            log.Info($"Saving tif file to {pdfOutputFilePath}");
+            pdfWriter.SaveToFile(pdfOutputFilePath);
+        }
+    }
     
     
     
