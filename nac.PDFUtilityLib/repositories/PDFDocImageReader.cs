@@ -4,7 +4,7 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 
-namespace nac.OCR.Tesseract.repositories;
+namespace nac.PDFUtilityLib.repositories;
 
 public class PDFDocImageReader: IDisposable
 {

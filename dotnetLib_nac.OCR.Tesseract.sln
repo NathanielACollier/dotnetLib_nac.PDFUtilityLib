@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nac.OCR.Tesseract", "nac.OCR.Tesseract\nac.OCR.Tesseract.csproj", "{690A039A-E3D2-4257-B1FC-82F6685A34A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nac.PDFUtilityLib", "nac.PDFUtilityLib\nac.PDFUtilityLib.csproj", "{690A039A-E3D2-4257-B1FC-82F6685A34A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{AE104D79-3953-4D4A-A713-C0220D533761}"
 EndProject

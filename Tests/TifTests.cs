@@ -11,7 +11,7 @@ public class TifTests
         string pdfPath = lib.directoryHelper.RelativeToHome("temp/Macworld_01_Premier_Issue.pdf");
         string outTifPath = lib.directoryHelper.RelativeToHome("temp/Macworld_01_Premier_Issue.tif");
         
-        nac.OCR.Tesseract.repositories.pdfToTifRepo.ConvertPdfToMultipageTif(pdfFilePath: pdfPath,
+        nac.PDFUtilityLib.repositories.pdfToTifRepo.ConvertPdfToMultipageTif(pdfFilePath: pdfPath,
             outputFilePath: outTifPath);
 
         var pdfFileInfo = new System.IO.FileInfo(pdfPath);
@@ -30,7 +30,7 @@ public class TifTests
         string inputTifPath = lib.directoryHelper.RelativeToHome("temp/Macworld_01_Premier_Issue.tif");
         string outputPDFPath = lib.directoryHelper.RelativeToHome("temp/MacWorld_01_Premier_Issue_Pictures.pdf");
         
-        nac.OCR.Tesseract.repositories.pdfToTifRepo.ConvertMultipageTifToPDF(inputTifPath, outputPDFPath);
+        nac.PDFUtilityLib.repositories.pdfToTifRepo.ConvertMultipageTifToPDF(inputTifPath, outputPDFPath);
         
         var inputTifFileInfo = new System.IO.FileInfo(inputTifPath);
         var outputPDFFileInfo = new System.IO.FileInfo(outputPDFPath);

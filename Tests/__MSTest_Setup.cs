@@ -14,7 +14,7 @@ public class __MSTest_Setup
         nac.Logging.Appenders.Debug.Setup();
         nac.Logging.Appenders.RollingFile.Setup();
 
-        nac.OCR.Tesseract.repositories.Logger.OnNewMessage += (_s, _args) =>
+        nac.PDFUtilityLib.repositories.Logger.OnNewMessage += (_s, _args) =>
         {
             nac.Logging.Logger.CreateLogEntry(new nac.Logging.model.LogMessage
             {

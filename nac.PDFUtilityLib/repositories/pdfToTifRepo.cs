@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace nac.OCR.Tesseract.repositories;
+namespace nac.PDFUtilityLib.repositories;
 
 public static class pdfToTifRepo
 {

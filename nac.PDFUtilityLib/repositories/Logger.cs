@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace nac.OCR.Tesseract.repositories;
+namespace nac.PDFUtilityLib.repositories;
 
 public class Logger
 {

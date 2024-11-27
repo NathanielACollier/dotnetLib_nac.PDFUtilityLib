@@ -1,7 +1,7 @@
 using System;
 using ImageMagick;
 
-namespace nac.OCR.Tesseract.repositories;
+namespace nac.PDFUtilityLib.repositories;
 
 public class MultiPageTIFFWriter : IDisposable
 {
